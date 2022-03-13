@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlnd:th="http://www.thymeleaf.org">
+
+<header>
+<meta charset="utf-8">
+<title>Femsite</title>
+<script type="text/javascript" th:src="@{/js/femsite.js}"></script>
+</header>
+
+<body>
+<div class="home">
+    <!-- タイトル -->
+    <a th:href="@{/}">
+        <img th:src="@{/images/logo.png}" class="title">
+    </a>
+    <!-- 検索ボタン -->
+    <form action="?" method="GET" class="form">
+        <div>
+            <input type="text" name="q" class="box" required>
+        </div>
+        <div class="btn">
+            <!-- ローカル検索 -->
+            <input type="submit" value="検索" class="submit" th:formaction="@{/search}">
+            <!-- Google検索  -->
+            <input type="submit" value="Googleで検索" class="submit" formaction="http://www.google.co.jp/search" onclick="set_hidden()">
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
