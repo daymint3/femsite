@@ -11,7 +11,7 @@ The individual search engine.
 
 # Note
 
-This is TEST CODE. Not all code is published.
+This is the TEST CODE. Not all code is published.
 
 # Author
 
