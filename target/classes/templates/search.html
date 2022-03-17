@@ -8,7 +8,12 @@
 
 <body>
 <div class="result">
-    <p th:text="'検索ワードは '+${q}+' です'" />
+    <p th:text="'検索結果 '+${result.size()}+' 件'" class="sum" />
+    
+    <div th:each="data : ${result}">
+        <a th:href="@{|${data.href}|}" th:text=${data.fileName} class="title" />
+        <p th:text="${data.snippet}" class="snippet" />
+    </div>
 </div>
 </body>
 

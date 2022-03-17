@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header>
+<meta charset="utf-8">
+<title>Femsite Config</title>
+<script type="text/javascript" th:src="@{/js/admin.js}"></script>
+</header>
+
+<body>
+<h1 class="title">admin専用ページ</h1>
+
+<form th:action="@{/admin}" method="post" onsubmit="check()">
+    <input type="submit" value="DBをリセットする" class="submit">
+</form>
+<p th:text=${alart} />
+</body>
+
+</html>
