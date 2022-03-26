@@ -5,9 +5,11 @@ It's only core structure to open to the public.
 
 # Demo
 
-We can easily search the local file in /repository/seminer
+We can easily search the local file in /repository/seminer.
 
 ![main page](images/search.jpg)
+
+It returns this result.
 
 ![results](images/result.jpg)
 
