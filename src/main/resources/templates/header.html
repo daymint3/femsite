@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <header th:fragment="header">
+    <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css">
+        
+    <div class="head">
+        <a th:href="@{/}">        
+            <img th:src="@{/images/logo.png}" class="femsite">
+        </a>
+    </div>
+    <div class="head">
+        <form th:action="@{/search}" method="GET" class="form">
+            <input type="text" name="q" class="box" th:value="${words}" required>
+            <input type="submit" value="検索" class="submit">
+        </form>
+    </div>
+    <p class="line"></p>
+    </header>
+</html>

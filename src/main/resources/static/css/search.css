@@ -1,0 +1,45 @@
+#drawer-navigation{ 
+	display:none;
+}
+
+.res {
+    position: absolute;
+    top: 100px;
+    padding-bottom: 50px;
+    margin-left: 15%;
+}
+
+.sum {
+    font-size: 14px;
+    color: #555555;
+}
+
+.title {
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.snippet {
+    width: 77ch;
+    font-size: 14px;
+    color: #555555;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: #0022aa;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #770077;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    font-weight: bold; 
+}

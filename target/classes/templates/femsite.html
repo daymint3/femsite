@@ -4,7 +4,13 @@
 <header>
 <meta charset="utf-8">
 <title>Femsite</title>
+<link th:href="@{/css/femsite.css}" rel="stylesheet" type="text/css">
 <script type="text/javascript" th:src="@{/js/femsite.js}"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+		$('#drawer-navigation').fadeIn(0); 
+    });
+</script>
 </header>
 
 <body>

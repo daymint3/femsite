@@ -1,0 +1,65 @@
+header {
+    display: inline-block;
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 100px; /* 高さを50pxに指定 */
+    background: #ffffff; /* 背景色にグレーを指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+}
+
+.femsite {
+    position: absolute;
+    /*position: fixed;*/
+    top:30px;
+    left: 20px;
+    width: 200px;
+	height: auto;
+    object-fit: cover;
+}
+
+.form{
+    position: absolute;
+    display: flex;
+    top: 35px;
+    left: 250px;
+    width: 50%;
+}
+
+.box{
+    /*position: fixed;*/
+    top: 45px;
+    left: 235px;
+    height: 30px;
+    /*width: 500px;*/
+    width: 75%;
+    min-width: 300px;
+    border-radius:30px;
+    padding-left: 13px;
+    margin-top: 9px;
+}
+
+.submit{
+    /*position: fixed;*/
+    /*display: inline;*/
+    top:36px;
+    left: 755px;
+    height: 32px;
+    min-width: 80px;
+    border-radius:20px;
+    margin-top: 10px;
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 15px;
+}
+
+.submit:hover {
+    color: #CC0000;
+}
+
+.line{
+    /*border-bottom: 3px solid #eeeeee;*/
+    box-shadow:0px 3px 3px 0px #dddddd;
+    padding-bottom: 82px;
+}

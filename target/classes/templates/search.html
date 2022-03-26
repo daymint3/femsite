@@ -4,17 +4,26 @@
 <header>
 <meta charset="utf-8">
 <title>Search Result</title>
+<link th:href="@{/css/search.css}" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    $(window).load(function() {
+		$('#drawer-navigation').fadeIn(0); 
+    });
+</script>
 </header>
 
 <body>
-<div class="result">
+<div class="res">
     <p th:text="'検索結果 '+${result.size()}+' 件'" class="sum" />
-    
     <div th:each="data : ${result}">
-        <a th:href="@{|${data.href}|}" th:text=${data.fileName} class="title" />
+        <a th:href="@{|${data.href}|}" th:text=${data.fileName} class="title">
+        </a>
         <p th:text="${data.snippet}" class="snippet" />
     </div>
 </div>
+
+<div th:replace="header::header"></div>
+<script type="text/javascript" th:src="@{/js/search.js}"></script>
 </body>
 
 </html>

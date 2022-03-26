@@ -1,0 +1,49 @@
+#drawer-navigation{ 
+	display: none;
+}
+
+.home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.title {
+    width: 550px;
+	height: auto;
+    object-fit: cover;
+    display: inline;
+    text-align: center;
+}
+
+.form{
+    margin-top: 10px;
+    border-width: 0px;
+    text-align: center;
+}
+
+.box{
+    height: 30px;
+    width: 500px;
+    border-radius:30px;
+    padding-left: 13px;
+}
+
+.btn {
+    text-align: center;
+}
+
+.submit{
+    height: 32px;
+    width: 150px;
+    border-radius:20px;
+    margin-top: 20px;
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 15px;
+}
+
+.submit:hover {
+    color: #CC0000;
+}
