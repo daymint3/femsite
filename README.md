@@ -1,6 +1,16 @@
 # femsite
 
-The individual search engine.
+Femsite is the individual search engine.
+It's only core structure to open to the public.
+
+# Demo
+
+We can easily search the local file in /repository/seminer
+
+![main page](images/search.jpg)
+
+![results](images/result.jpg)
+
 
 # Features
 
@@ -11,7 +21,7 @@ The individual search engine.
 
 # Note
 
-This is the TEST CODE. Not all code is published.
+This is the SAMPLE CODE. Not all code is published.
 
 # Author
 
