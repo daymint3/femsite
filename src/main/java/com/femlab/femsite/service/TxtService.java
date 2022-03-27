@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+// テキストファイルの文章を読み取る
+
 @Service
 public class TxtService {
     public String readTxt(File file) throws IOException {

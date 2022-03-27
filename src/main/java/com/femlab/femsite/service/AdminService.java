@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+// adminの実行コマンドを記述
+
 @Service
 @Transactional
 public class AdminService {
@@ -28,8 +30,8 @@ public class AdminService {
 
     // DBのリセットおよびindexの再構築
     public void resetIndex() throws FileNotFoundException, IOException{
-        //dictionaryRepo.deleteAllInBatch();  // DB(DICTIONARYのリセット)
-        postingRepo.deleteAllInBatch();;     // DB(POSTINGSのリセット)
+        dictionaryRepo.deleteAllInBatch();  // DB(DICTIONARYのリセット)
+        postingRepo.deleteAllInBatch();;    // DB(POSTINGSのリセット)
 
         String[] dirList= {"/seminer"};
 
@@ -37,6 +39,7 @@ public class AdminService {
             String EXTERNAL_FILE_PATH = Paths.get(FILE_PATH+dirList[i]).toAbsolutePath().toString();  // 絶対パスに変換
             File dir = new File(EXTERNAL_FILE_PATH);
             File[] list = dir.listFiles();
+
             for(int j = 0; j < list.length; j++) {
                 if(list[j].isFile()) {                      // ファイルのみ
                     indexing.execute(dirList[i], list[j]);  // インデクシングの実行

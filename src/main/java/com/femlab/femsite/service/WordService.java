@@ -9,6 +9,8 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.stereotype.Service;
 
+// Wordファイルの文章を読み取る
+
 @Service
 public class WordService {
     private XWPFWordExtractor ex;

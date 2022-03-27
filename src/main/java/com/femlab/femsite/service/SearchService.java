@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 // 検索アルゴリズムの実装
+
 @Service
 public class SearchService {
 
@@ -34,7 +35,7 @@ public class SearchService {
     // 出力：リスト（pos_id, position）
     // 
     // スコアリングによって検索順位が変化する
-    // ここでは, 
+    // ここでは, スコア = タイトルに含まれる数×100 + 本文に含まれる数　とした
     public List<Pair<Integer, Integer>> findPosidAndPosition(String text) {
         List<Pair<Integer, Integer>> result = new ArrayList<>();  // (pos_id,position)のリストで返す;
 
@@ -65,20 +66,21 @@ public class SearchService {
 
                 if(type.equals("名詞")) {
                     mword = token.getSurface();
-                } else if(type.equals("動詞")){
+                } else if(type.equals("動詞")) {
                     mword = token.getBaseForm();
                 } else continue;
 
                 List<Dictionary> dic = dictionaryRepo.findByWordLike("%" + mword + "%");
                 for(Dictionary d : dic) {
-                    if(!score.containsKey(d.getPosId())){      //ない -> 0で初期化
+                    if(!score.containsKey(d.getPosId())){      // ない -> 0で初期化
                         score.put(d.getPosId(), 0);
                     }
-
+                    
+                    // 現在のスコアを更新
                     int now=score.get(d.getPosId());
                     score.put(d.getPosId(), now+1);
 
-                    if(!position.containsKey(d.getPosId())){  // 最初に現れたポジション
+                    if(!position.containsKey(d.getPosId())){  // 最初に現れたポジションのメモ
                         position.put(d.getPosId(), d.getPosition());
                     }
                 }
@@ -96,9 +98,6 @@ public class SearchService {
             result.add(new Pair<Integer, Integer>(posId, position.get(posId)));
         }
 
-        /*result.stream().forEach(p->{
-            System.out.println( "key=" + p.getKey() + " value=" + p.getValue() );
-         });*/
         return result;
     }
 }

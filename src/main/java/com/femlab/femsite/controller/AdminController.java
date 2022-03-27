@@ -17,13 +17,13 @@ public class AdminController {
     AdminService administrator;
 
     @GetMapping("/admin")
-    public String getadmin(){
+    public String getadmin() {
         return "admin";
     }
 
     // データベース（Index）のリセット
     @PostMapping("/admin")
-    public String executeResetIndex(Model model) throws FileNotFoundException, IOException{
+    public String executeResetIndex(Model model) throws FileNotFoundException, IOException {
         administrator.resetIndex();
         model.addAttribute("alart", "DBをリセットしました");
         return "admin";

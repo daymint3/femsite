@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+// "/download/ファイル名" にアクセスでファイルをダウンロードできる
+
 @RestController
 @RequestMapping("/download")
 public class FileDownloadController {
@@ -33,7 +35,7 @@ public class FileDownloadController {
 
 	@RequestMapping("/{fileName:.+}")
 	public void download(HttpServletRequest request, HttpServletResponse response, @PathVariable("fileName") String fileName) throws IOException {
-		final String EXTERNAL_FILE_PATH = Paths.get(FILE_PATH + fileName).toAbsolutePath().toString();   //絶対パスに変換
+		final String EXTERNAL_FILE_PATH = Paths.get(FILE_PATH + fileName).toAbsolutePath().toString();  // 絶対パスに変換
 		File file = new File(EXTERNAL_FILE_PATH);
 
 		if (file.exists()) {

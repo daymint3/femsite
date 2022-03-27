@@ -54,12 +54,12 @@ public class SearchController {
             String text = "";
             String ext = title.substring(title.lastIndexOf(".")+1);  // 拡張子を得る（docx, txt）
             String FILE_PATH = path + data.getDir() + "/" + data.getTitle();
-            String EXTERNAL_FILE_PATH = Paths.get(FILE_PATH).toAbsolutePath().toString();   //絶対パスに変換
+            String EXTERNAL_FILE_PATH = Paths.get(FILE_PATH).toAbsolutePath().toString();  // 絶対パスに変換
             File file = new File(EXTERNAL_FILE_PATH);
 
             if(ext.equals("docx") || ext.equals("doc")) {  // Wordファイル
                 text = msword.readText(file);
-            }else if(ext.equals("txt")) {
+            } else if(ext.equals("txt")) {  // テキストファイル
                 text = txt.readTxt(file);
             }
 
