@@ -1,5 +1,6 @@
 window.onload = highlight();
 
+// タイトル, スニペット内の検索キーワードを強調する
 function highlight() {
     var searching = document.getElementsByClassName('box');
     var words = searching[0].getAttribute('value').trim().split(/\s/);
@@ -15,8 +16,8 @@ function replace(classname, word) {
     
     for(var i = 0; i < snippet.length; i++) {
         var text = snippet[i].innerHTML;
-        var reg = new RegExp(word, "g" );
-        text = text.replace(reg, '<span class="highlight">'+word+'</span>');
+        var reg = new RegExp(word, "g");
+        text = text.replace(reg, '<span class="highlight">' + word + '</span>');
         document.getElementsByClassName(classname)[i].innerHTML = text;
     }
     

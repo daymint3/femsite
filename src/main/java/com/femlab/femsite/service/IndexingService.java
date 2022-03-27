@@ -13,7 +13,11 @@ import com.femlab.femsite.repository.DictionaryRepository;
 import com.femlab.femsite.repository.PostingRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
+// インデクシングを行う
+// 構文解析を行い, データベースにインデックスを作成
 
 @Service
 public class IndexingService {
@@ -33,7 +37,7 @@ public class IndexingService {
     @Autowired
     MorphemeService morpheme;
 
-    // @Async
+    @Async
     public void execute(String dir, File file) throws FileNotFoundException, IOException {
         String title = file.getName();
         String href = dir;

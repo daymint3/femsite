@@ -1,3 +1,4 @@
+// データベースのリセットに対するアラート
 function check() {
 	if(window.confirm('本当に実行しますか？')) {  //　確認ダイアログを表示
 		return true;                             // 「OK」時は送信を実行

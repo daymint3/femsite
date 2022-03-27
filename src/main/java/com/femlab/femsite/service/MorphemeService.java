@@ -7,12 +7,15 @@ import com.atilika.kuromoji.ipadic.Tokenizer;
 
 import org.springframework.stereotype.Service;
 
+// 構文解析を行う
+// kuromojiの使用
+
 @Service
 public class MorphemeService {
     public List<Token> analysis(String text) {
-        Tokenizer tokenizer = new Tokenizer() ;             // Kuromojiオブジェクト作成
+        Tokenizer tokenizer = new Tokenizer() ;         // Kuromojiオブジェクト作成
 
-        List<Token> tokens = tokenizer.tokenize(text);      // Tokenize
+        List<Token> tokens = tokenizer.tokenize(text);  // Tokenize
 
         // テスト用
         /*
